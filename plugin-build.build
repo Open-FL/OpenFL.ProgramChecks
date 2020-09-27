@@ -1,4 +1,5 @@
 name: open-fl-program-checks
 target: .\src\OpenFL.ProgramChecks\bin\Debug\netstandard2.0\OpenFL.ProgramChecks.dll
 output: .\docs\latest\open-fl-program-checks.zip
+origin: https://open-fl.github.io/OpenFL.ProgramChecks/latest/info.txt
 flags: INFO_TO_OUTPUT
