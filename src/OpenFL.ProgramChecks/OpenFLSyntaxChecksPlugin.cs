@@ -13,7 +13,6 @@ namespace OpenFL.ProgramChecks
     public class OpenFLSyntaxChecksPlugin : APlugin<FLProgramCheckBuilder>
     {
 
-        public override string Name => "open-fl-program-checks";
 
         public override void OnLoad(PluginAssemblyPointer ptr)
         {
