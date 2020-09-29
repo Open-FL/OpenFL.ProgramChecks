@@ -13,13 +13,12 @@ namespace OpenFL.ProgramChecks
     public class OpenFLSyntaxChecksPlugin : APlugin<FLProgramCheckBuilder>
     {
 
-
         public override void OnLoad(PluginAssemblyPointer ptr)
         {
             base.OnLoad(ptr);
 
 
-            List< FLProgramCheck> checks = new List<FLProgramCheck>();
+            List<FLProgramCheck> checks = new List<FLProgramCheck>();
             checks.AddRange(
                             Assembly.GetExecutingAssembly().GetTypes()
                                     .Where(
@@ -34,7 +33,7 @@ namespace OpenFL.ProgramChecks
                                            )
                                     .Where(y => (y.CheckType & PluginHost.StartProfile) != 0)
                            );
-            checks.ForEach(x=>PluginHost.AddProgramCheck(x));
+            checks.ForEach(x => PluginHost.AddProgramCheck(x));
         }
 
     }
