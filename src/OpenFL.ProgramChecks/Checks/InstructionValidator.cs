@@ -1,4 +1,7 @@
-﻿using OpenFL.Core.DataObjects.SerializableDataObjects;
+﻿using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+
+using OpenFL.Core.DataObjects.SerializableDataObjects;
 using OpenFL.Core.Exceptions;
 using OpenFL.Core.ProgramChecks;
 
@@ -18,7 +21,7 @@ namespace OpenFL.ProgramChecks.Checks
             {
                 foreach (SerializableFLInstruction serializableFlInstruction in serializableFlFunction.Instructions)
                 {
-                    if (!InstructionSet.HasInstruction(serializableFlInstruction.InstructionKey))
+                    if (!InstructionSet.HasInstruction(serializableFlInstruction.InstructionKey) && input.KernelData.All(x => x.Kernel != serializableFlInstruction.InstructionKey))
                     {
                         throw new FLProgramCheckException(
                                                           "The Script is referencing the instruction with key: " +
